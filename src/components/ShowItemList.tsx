@@ -1,9 +1,9 @@
 import Item from './Item';
-import {ItemType} from '../../services/types';
+import type {ItemType} from '../../services/types';
 
-export default function ShowItemList(list: ItemType[]) {
+export default function ShowItemList({list}:{list: ItemType[]}) {
     return (
-         <div>
+         <>
             {list.map((item)=> (
                 <div key={item.id}>
                 <Item item={item}/>
@@ -11,7 +11,7 @@ export default function ShowItemList(list: ItemType[]) {
         </div>
         ))
     }
-    </div>
+    </>
 
     )
 }
