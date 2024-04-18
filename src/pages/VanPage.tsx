@@ -29,6 +29,14 @@ export default function VanPage() {
         <>
             <h1>VanPage</h1>
             <div className="product-table">
+                <div className="product-row header">
+                <div className="product-cell">ID</div>
+                <div className="product-cell">Brand</div>
+                <div className="product-cell">Model</div>
+                <div className="product-cell">Capacity (kg)</div>
+                <div className="product-cell">Deliveries</div>
+                <div className="product-cell">Weight of Deliveries</div>
+                </div>
             {<ShowItemList list= {itemList  
                 
             }/> }

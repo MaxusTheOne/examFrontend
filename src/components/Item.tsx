@@ -10,7 +10,7 @@ export default function Item({ item, type }: ItemProps) {
       {
             Object.entries(item).map(([key, value], i) => (
               
-              <div key={i} id={item.id.toString()+i.valueOf()+type} className="product-cell">
+              <div key={i} id={(item.id!.toString())+i.valueOf()+type} className="product-cell">
                 {typeof value === 'string' || typeof value === 'number' ? value : 'unknown'}
               </div>
             ))

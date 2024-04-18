@@ -37,11 +37,20 @@ async function fetchProducts(): Promise<Product[]> {
   const options = makeOptions("GET", null, undefined);
   return fetch(url+"/products", options).then(handleHttpErrors) as Promise<Product[]>;
 }
+async function postProduct(Product: Product): Promise<Product> {
+  const options = makeOptions("POST", Product, undefined);
+  return fetch(url+"/products", options).then(handleHttpErrors);
+}
 
 
 async function fetchDeliveries(): Promise<Delivery[]> {
   const options = makeOptions("GET", null, undefined);
   return fetch(url+"/deliveries", options).then(handleHttpErrors) as Promise<Delivery[]>;
+}
+
+async function postDelivery(Delivery: Delivery): Promise<Delivery> {
+  const options = makeOptions("POST", Delivery, undefined);
+  return fetch(url+"/deliveries", options).then(handleHttpErrors);
 }
 
 async function fetchVans(): Promise<Van[]> {
@@ -51,4 +60,4 @@ async function fetchVans(): Promise<Van[]> {
 
 
 
-export { fetchProducts, fetchDeliveries, fetchVans}
+export { fetchProducts, fetchDeliveries, fetchVans, postProduct, postDelivery}

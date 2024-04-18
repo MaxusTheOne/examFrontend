@@ -1,8 +1,8 @@
 interface Product {
-    id: number;
+    id?: number;
     name: string;
     price: number;
-    weight: number;
+    weightInGrams: number;
 }
 
 type OrderTuple = [Product, number]
@@ -13,10 +13,10 @@ interface ProductOrder {
 }
 
 interface Delivery {
-    id: number;
+    id?: number;
     deliveryDate: Date;
     fromWarehouse: string;
-    destination: string;
+    toDestination: string;
 }
 
 interface Van {
