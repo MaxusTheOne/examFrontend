@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.product-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.product-row {
+  display: flex;
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.product-cell {
+  flex: 1;
+  padding: 10px;
+}
+
+.header {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}

@@ -29,7 +29,7 @@ interface Van {
 interface ItemType {
     id: number;
     type: string;
-    list: Delivery[] | Product[] | Van[];
+    list: Delivery | Product | Van;
 }
 
 export type { ItemType, Product, Delivery, Van, ProductOrder, OrderTuple}

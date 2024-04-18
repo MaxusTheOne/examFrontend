@@ -1,18 +1,26 @@
-import { ItemType } from "../../services/types";
+
+import { Delivery, Van, Product } from "../services/types";
+
+export default function Item({ item, type }: ItemProps) {
 
 
-export default function Item({ item}: { item: ItemType }) {
   return (
     <>
    
-      {Object.entries(item.list).map(([key, value], i) => (
-            Object.entries(value).map(([key, value], i) => (
-              <div key={i}>
-                {key}: {typeof value === 'string' || typeof value === 'number' ? value : 'unknown'}
+      {
+            Object.entries(item).map(([key, value], i) => (
+              
+              <div key={i} id={item.id.toString()+i.valueOf()+type} className="product-cell">
+                {typeof value === 'string' || typeof value === 'number' ? value : 'unknown'}
               </div>
             ))
             
-          ))}
+          }
     </>
   );
+}
+
+interface ItemProps {
+  item: Delivery | Van | Product;
+  type: string;
 }
